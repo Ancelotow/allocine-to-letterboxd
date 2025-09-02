@@ -68,7 +68,7 @@ func saveIntoCsv(reviews []Review) {
 	currentLine := ""
 	for _, review := range reviews {
 		currentLine = fmt.Sprintf(
-			"%d;%s;%d;%s;%.1f;%s\n",
+			"%d;\"%s\";%d;%s;%.1f;\"%s\"\n",
 			review.AllocineId,
 			review.MovieTitle,
 			review.MovieYear,
