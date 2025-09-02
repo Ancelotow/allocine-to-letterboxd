@@ -65,9 +65,8 @@ func saveIntoCsv(reviews []Review) {
 		log.Fatal("Error writing header to csv file", err)
 	}
 
-	currentLine := ""
 	for _, review := range reviews {
-		currentLine = fmt.Sprintf(
+		currentLine := fmt.Sprintf(
 			"%d;\"%s\";%d;%s;%.1f;\"%s\"\n",
 			review.AllocineId,
 			review.MovieTitle,
