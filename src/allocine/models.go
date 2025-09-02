@@ -12,7 +12,7 @@ type Movie struct {
 }
 
 type ReviewContent struct {
-	Rating         float64 `json:"rating"`
+	Rating         float32 `json:"rating"`
 	UpdatedAt      string  `json:"updatedAt"`
 	Status         string  `json:"status"`
 	Review         string  `json:"review"`
@@ -23,6 +23,7 @@ type ReviewContent struct {
 type Opinion struct {
 	ID         string        `json:"id"`
 	InternalID int           `json:"internalId"`
+	CreatedAt  string        `json:"createdAt"`
 	Content    ReviewContent `json:"content"`
 }
 

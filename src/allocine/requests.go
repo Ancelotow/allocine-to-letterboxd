@@ -9,7 +9,7 @@ import (
 	"github.com/machinebox/graphql"
 )
 
-func GetReviews() {
+func GetReviews() []Node {
 	req := graphql.NewRequest(`
         query GetMoviesReviews($after: String, $first: Int, $order: UserSocialActionSorting, $rating: ReviewRating, $statuses: [ReviewStatus]!) {
             me {
@@ -46,6 +46,7 @@ func GetReviews() {
                                         opinion {
                                             id
                                             internalId
+											createdAt
                                             content {
                                                 rating(base: 5)
                                                 updatedAt
@@ -82,5 +83,6 @@ func GetReviews() {
 		log.Fatal(err)
 	}
 
-	fmt.Println(respData.Me.User.Social.RelatedEntities.MoviesReviews.Edges[0].Node.Opinion.Content.Review)
+	opinions := respData.Me.User.Social.RelatedEntities.MoviesReviews.Edges
+	return opinions
 }
