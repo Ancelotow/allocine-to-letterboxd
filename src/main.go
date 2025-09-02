@@ -60,7 +60,7 @@ func saveIntoCsv(reviews []Review) {
 		log.Fatal("Error creating csv file", err)
 	}
 
-	_, err = file.WriteString("AllocineId,MovieTitle,MovieYear,ReviewAt,Rating,Review\n")
+	_, err = file.WriteString("AllocineId;MovieTitle;MovieYear;ReviewAt;Rating;Review\n")
 	if err != nil {
 		log.Fatal("Error writing header to csv file", err)
 	}
