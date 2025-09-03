@@ -17,7 +17,7 @@ func NewCsvGenerator() *CsvGenerator {
 
 func (g *CsvGenerator) Generate(reviews []entites.Review) {
 	outputDir := "output"
-	outputFile := "allocine-reviews.csv"
+	outputFile := "reviews-to-imported.csv"
 	outputPath := filepath2.Join(outputDir, outputFile)
 
 	err := os.MkdirAll(outputDir, 0755)
@@ -30,16 +30,15 @@ func (g *CsvGenerator) Generate(reviews []entites.Review) {
 		log.Fatal("Error creating csv file", err)
 	}
 
-	_, err = file.WriteString("AllocineId;MovieTitle;MovieYear;ReviewAt;Rating;Review\n")
+	_, err = file.WriteString("Title,Year,WatchedDate,Rating,Review\n")
 	if err != nil {
 		log.Fatal("Error writing header to csv file", err)
 	}
 
 	for _, review := range reviews {
 		currentLine := fmt.Sprintf(
-			"%d;\"%s\";%d;%s;%.1f;\"%s\"\n",
-			review.AlloCineId,
-			review.MovieTitle,
+			"\"%s\",%d,%s,%.1f,\"%s\"\n",
+			review.OriginalTitle,
 			review.MovieYear,
 			review.ReviewAt.Format("2006-01-02"),
 			review.Rating,

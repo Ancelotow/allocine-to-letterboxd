@@ -5,10 +5,11 @@ type MovieData struct {
 }
 
 type Movie struct {
-	ID         string    `json:"id"`
-	InternalID int       `json:"internalId"`
-	Title      string    `json:"title"`
-	Data       MovieData `json:"data"`
+	ID            string    `json:"id"`
+	InternalID    int       `json:"internalId"`
+	Title         string    `json:"title"`
+	OriginalTitle string    `json:"originalTitle"`
+	Data          MovieData `json:"data"`
 }
 
 type ReviewContent struct {

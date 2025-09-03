@@ -19,7 +19,7 @@ func main() {
 	reviews := useCase.GetAllReviews()
 	log.Printf("Found %d AlloCiné reviews\n", len(reviews))
 
-	log.Println("Writing reviews into csv file...")
+	log.Println("Writing reviews into csv file to import into Letterboxd...")
 	useCase.SaveReviewsIntoCsv(reviews)
 	log.Println("Reviews written into csv file")
 }
