@@ -17,7 +17,7 @@ func NewCsvGenerator() *CsvGenerator {
 
 func (g *CsvGenerator) Generate(reviews []entites.Review) {
 	outputDir := "output"
-	outputFile := "reviews-reviews.csv"
+	outputFile := "allocine-reviews.csv"
 	outputPath := filepath2.Join(outputDir, outputFile)
 
 	err := os.MkdirAll(outputDir, 0755)
