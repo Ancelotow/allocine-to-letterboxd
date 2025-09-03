@@ -12,29 +12,24 @@ type Movie struct {
 }
 
 type ReviewContent struct {
-	Rating         float32 `json:"rating"`
-	UpdatedAt      string  `json:"updatedAt"`
-	Status         string  `json:"status"`
-	Review         string  `json:"review"`
-	HelpfulCount   int     `json:"helpfulCount"`
-	UnhelpfulCount int     `json:"unhelpfulCount"`
+	Rating float32 `json:"rating"`
+	Review string  `json:"review"`
 }
 
 type Opinion struct {
-	ID         string        `json:"id"`
-	InternalID int           `json:"internalId"`
-	CreatedAt  string        `json:"createdAt"`
-	Content    ReviewContent `json:"content"`
-}
-
-type ReviewNode struct {
-	ID      string  `json:"id"`
-	Entity  Movie   `json:"entity"`
-	Opinion Opinion `json:"opinion"`
+	ID        string        `json:"id"`
+	CreatedAt string        `json:"createdAt"`
+	Content   ReviewContent `json:"content"`
 }
 
 type Node struct {
-	Node ReviewNode `json:"node"`
+	ID      string  `json:"id"`
+	Movie   Movie   `json:"movie"`
+	Opinion Opinion `json:"opinion"`
+}
+
+type Edge struct {
+	Node Node `json:"node"`
 }
 
 type PageInfo struct {
@@ -42,14 +37,14 @@ type PageInfo struct {
 	HasNextPage bool   `json:"hasNextPage"`
 }
 
-type Reviews struct {
+type Movies struct {
 	TotalCount int      `json:"totalCount"`
 	PageInfo   PageInfo `json:"pageInfo"`
-	Edges      []Node   `json:"edges"`
+	Edges      []Edge   `json:"edges"`
 }
 
 type RelatedEntities struct {
-	MoviesReviews Reviews `json:"moviesReviews"`
+	Movies Movies `json:"movies"`
 }
 
 type Social struct {
