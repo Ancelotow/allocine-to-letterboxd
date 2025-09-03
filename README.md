@@ -8,17 +8,12 @@
 
 A Go script to export movie reviews from AlloCiné and import them into Letterboxd.
 
-
-## ⚠️ ️**DISCLAIMER**
-This project is not affiliated with or endorsed by AlloCiné or Letterboxd. 
-It is a personal project created to facilitate the transfer of reviews data between the two platforms.
-Please use it responsibly and respect the terms of service of both platforms.
-
-
 ## ✨ Features
-- Export movie reviews from AlloCiné in CSV format.
-- Import reviews into Letterboxd using their import feature. _**(in progress...)**_
-
+- Export movie reviews from AlloCiné in CSV format rideable by Letterboxd
+```CSV
+Title,Year,WatchedDate,Rating,Review
+"Thor: The Dark World",2013,2025-09-03,2.5,"My review" 
+```
 
 ## 🚀 Getting Started
 
