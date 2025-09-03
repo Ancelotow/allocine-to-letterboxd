@@ -20,11 +20,12 @@ func (m *AllocineMapper) Map(opinion Edge) core.Review {
 	}
 
 	return core.Review{
-		AlloCineId: opinion.Node.Movie.InternalID,
-		MovieTitle: opinion.Node.Movie.Title,
-		MovieYear:  opinion.Node.Movie.Data.ProductionYear,
-		ReviewAt:   createdAt,
-		Rating:     opinion.Node.Opinion.Content.Rating,
-		Review:     opinion.Node.Opinion.Content.Review,
+		AlloCineId:    opinion.Node.Movie.InternalID,
+		MovieTitle:    opinion.Node.Movie.Title,
+		OriginalTitle: opinion.Node.Movie.OriginalTitle,
+		MovieYear:     opinion.Node.Movie.Data.ProductionYear,
+		ReviewAt:      createdAt,
+		Rating:        opinion.Node.Opinion.Content.Rating,
+		Review:        opinion.Node.Opinion.Content.Review,
 	}
 }

@@ -26,7 +26,7 @@ Please use it responsibly and respect the terms of service of both platforms.
 - [Go 1.25](https://go.dev/doc/install)
 - [GoLand IDE](https://www.jetbrains.com/fr-fr/go/) (optional)
 
-### Run with Console
+### Installing
 1. Clone the repository: 
 ```shell
 git clone https://github.com/Ancelotow/allocine-to-letterboxd.git
@@ -47,14 +47,24 @@ go install
 JWT_TOKEN=<YOUR_TOKEN>
 ```
 
-6. Run `main.go`
+### Creating the CSV file from your AlloCiné reviews
+
+1. Run `main.go`
 ```shell
 go run cmd/app/main.go
 ```
 
-7. The script will generate a `allocine-reviews.csv` file in the `output` directory, located in the root directory of the project.
+2. The script will generate a `reviews-to-imported.csv` file in the `output` directory, located in the root directory of the project.
 
-8. Enjoy !
+### Importing the CSV file into Letterboxd
+
+1. Go to the [Letterboxd import page](https://letterboxd.com/import/)
+2. Click on the **Select a file** button
+3. Select the `reviews-to-imported.csv` file
+4. Click on the **Import** button
+5. Wait for the import to complete
+6. Go to the [Letterboxd diary page](https://letterboxd.com/ancelotow/films/diary/)
+7. Now you can enjoy your reviews!
 
 ## ⚖️ License
 This project is licensed under the MIT License.
